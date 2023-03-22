@@ -1,0 +1,39 @@
+-------- SC CID V3            --------
+-------- KMG             ---------
+-------- SOURCE ---------
+------[ KALAU GAMAU RIBET PAKE RANDOM LETTER/RANDOM NAME ]-----
+----------------------SETTING----------------------------------------------------------
+delay_total = 3 -- Delay Login (Second)
+skip_tutorial = true
+----------------------------------------------------------------------------------------------------
+--------------------------RANDOM NAME GROWTOPIA--------
+namerandom = true -- example: HeadZero973, random_letter must be false!
+------------------------------------------------------------------------------------------------------------------------
+---------------------------RANDOM LETTER SETTING-----------------------------------------------------------
+random_letter = false -- 7-18 letter example: GHCAS56, namerandom must be false!
+number_in_name = 7
+with_numbers = true -- if true, example: YYYAGS667, if false example: AXCOPWF  namerandom must be = true!!
+--- random name like ASZJSAK. SETTIING namerandom = false | random_letter = true
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------- REQ NAME & PASS SETTING ---------
+name_sort = false -- atau name urut example: YUUTAAA1-5
+name_sort_number_front = true -- example: true = YUU123, false = 123YUU
+name_bot = "yourname" -- GrowID Bot only namerandom = false
+pass_bot = "weststorepass@1" -- Password Bot notes :  Password 8-18 letter, 1 number, 1 special character example: @#$!^*., ex: ilikedog.2.!
+------------------------Start-Ending SETTING -----
+starting = 1 -- how many account, ex: starting = 1, ending = 10, will create EX: YUUTAAX-10
+ending = 3
+------------------------------------------------------------------------------------------------------------------------
+--------------------------DOMAIN EMAIL SETTING-----------------------------------------------
+email = "sucre133" -- example: CallMeHSxKS notes: only name_sort = true
+domain_email = "@erhadeta.33mail.com" -- example: @gmail.com
+upg_bp = false -- If true, bot auto upgrade BP to 26slots (take longer)
+---------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------AUTO TAKE PICKAXE---------------------------------------------------
+auto_pickaxe = true -- if true then bot auto wear pickaxe
+world_pickaxe = "JIGSAWSTOCID" -- World Pickaxe
+id_door = "BABAPROPR" -- id pickaxe door
+--------------------------------------------------------------------------------
+----------------------------WEBHOOK--------------------------------------------------
+WebhookURL = "https://discord.com/api/webhooks/1078017488681455757/1_zrJg6MuZ8zciqzVn1SH73uC58VOfj1yexm0JyClUCnJQI4PmkZpPwHFNvkl9jDnZNl"
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

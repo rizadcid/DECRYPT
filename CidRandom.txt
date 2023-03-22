@@ -1,0 +1,210 @@
+-----------Random Name---------
+AccRandomName = "yes" --yes or no
+LetterCount = 10
+-----------------------------
+
+sayi= 506 --starting number
+soyi= 508
+
+AccName = "peperbot"
+AccEmail = "rizadriji"
+Domain = "@gmail.com"
+AccPassword = "141414RR#"
+
+-- For example if you write like this
+-- Bot Name peperbot120 
+-- pass Eehreere. 
+-- e-mail mailname120@gmail.com
+
+TakePickaxe = "no" --yes or no
+SkipTutor = "yes" --yes or no
+
+world = "" -- Pickaxe World, drop on door pickaxe
+worldID = "" 
+
+Webhooks = "https://discord.com/api/webhooks/1079768161563455519/pf9lfhGqWfnXE2qbElcVjW6XheS-jXCuwUgRvbxx254xL4__CX8ocqdKFHJMd4EaqQln"
+
+--do not touch
+hesapac = 1
+function Log(text)
+  filee = io.open("mas.txt","a")
+  filee:write(text.. "\n")
+  filee:close()
+end
+
+function GonWebhook(Shinuqi)
+    local script = [[
+    $webHookUrl = "]]..Webhooks..[["
+    $thumbnailObject = [PSCustomObject]@{
+    url = "https://cdn.discordapp.com/emojis/1016295109970645022.gif?size=80&quality=lossless"
+    }
+    $color = Get-Random -Minimum 0 -Maximum 16777215
+    $title = 'Shinuqi#2111 - Create Cid'
+    $description = "**]]..Shinuqi..[[**"
+
+    $footer = [PSCustomObject]@{
+        icon_url = "https://cdn.discordapp.com/emojis/978628955907170314.gif?size=96&quality=lossless"
+        text = "]].."Shinuqi#2111 | Date : "..(os.date"%d/%m/%y":upper().." Hour : ")..os.date("%I")..":"..os.date("%M").." "..os.date("%p"):upper()..[["
+    }
+
+    $embedObject = [PSCustomObject]@{
+        color = $color
+        title = $title
+        description = $description
+        thumbnail = $thumbnailObject
+        footer = $footer
+    }
+
+    [System.Collections.ArrayList]$embedArray = @()
+    $embedArray.Add($embedObject)
+
+    $payload = [PSCustomObject]@{
+        embeds = $embedArray
+    }
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Invoke-RestMethod -Uri $webHookUrl -Body ($payload | ConvertTo-Json -Depth 4) -Method Post -ContentType 'application/json'
+    ]]
+
+    local pipe = io.popen("powershell -command -", "w")
+    pipe:write(script)
+    pipe:close()
+end
+
+function rasgeleRafIsmi()
+  math.randomseed(os.time()) -- rastgele sayı üretmek için kullanılan tohum değeri
+  harfler = "abcdefghijklmnopqrstuvwxyz1234567890" -- rasgele harf dizisi
+  isim = ""
+  for i = 1, LetterCount do -- 8 harfli bir isim oluşturmak için
+    rasgeleSayi = math.random(1, #harfler)
+    isim = isim .. string.sub(harfler, rasgeleSayi, rasgeleSayi)
+  end
+  return {isims = isim}
+end
+
+function hesapk1()
+if AccRandomName == "yes" then
+	names = rasgeleRafIsmi().isims
+else
+	names = AccName..sayi
+end
+email = AccEmail..sayi..Domain
+password = AccPassword
+
+	setBool("Guest Account",true)
+	addBot("","")
+	sleep(8000)
+	if getBot().status == "online" then
+		if SkipTutor == "yes" then
+			skip()
+			if TakePickaxe == "yes" then
+			join(world,worldID)
+			sleep(500)
+			take()
+			sleep(3000)
+			wear(98)
+			sleep(2000)
+			drops()
+			sleep(1000)
+			end
+		end
+		sendPacket(2, "action|growid")
+		sleep(5000)
+		sendPacket(2, "action|dialog_return\ndialog_name|growid_apply\nlogon|"..names.."\npassword|"..password.."\npassword_verify|"..password.."\nemail|"..email)
+		sleep(5000)
+		removeBot(getBot().name)
+		setBool("Guest Account",false)
+		sleep(5000)
+		addBot(names,password)
+		sleep(5000)
+		removeBot(getBot().name)
+		GonWebhook(
+		"<:growbot:992058196439072770> Bot Name : "..names.." Created")
+                sleep(5000)
+                Log("Name = ".. names .."\nEmail = ".. email .."\nPassword = ".. password)
+	else
+		GonWebhook(getBot().status.." Change IP")
+		hesapac = 0
+		removeBot("")
+	end
+end
+
+function skip()
+  sendPacket(2,"ftue_start_popup_close")
+  sleep(2700)
+  findPath(86,30) 
+  sleep(1000)
+  enter()
+  sleep(2000)
+  sendPacket(2,"ftue_start_popup_close")
+  sleep(3000)
+  findPath(46,23)
+  sleep(1000)
+  punch(1,0)
+  sleep(1000)
+  punch(1,0)
+  sleep(1000)
+  punch(1,0)
+  sleep(1000)
+  place(2,1,0)
+  sleep(1000)
+  punch(1,0)
+  sleep(1000)
+  punch(1,0)
+  sleep(1000)
+  punch(1,0)
+  sleep(1000)
+  collect(3)
+  sleep(1000)
+  place(3,1,0)
+  sleep(1000)
+  place(10672,1,0)
+  sleep(1000)
+  punch(1,0)
+  sleep(500)
+  collect(3)
+  sleep(1000)
+  wear(48)
+  sleep(1000)
+  sendPacket(3, "action|quit_to_exit")
+  sleep(7000)
+  local totTxt = ""
+  for i = 1,18 do
+    totTxt = totTxt..string.char(math.random(97,122))
+  end
+  sendPacket(3,"action|join_request\nname|" .. totTxt.."\ninvitedWorld|0")
+  sleep(7000)
+  place(9640,0,-2)
+  sleep(2000)
+ end
+  
+function take()
+    for _,object in pairs(getObjects()) do
+      if object.id == 98 then
+        findPath(math.floor(object.x)-1,math.floor(object.y)) sleep(500) collect(2) sleep(500)
+        if findItem(98) > 0 then
+          break
+        end
+      end
+    end
+end
+
+function drops()
+    sendPacket(2, "action|drop\n|itemID|" .. 98)
+    sendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|" .. 98 .. "|\ncount|" .. findItem(98) - 1)
+    sleep(1000)
+end
+
+function join(a,b) 
+    sleep(3000) 
+    sendPacket(3,"action|join_request\nname|"..a.."|"..b.."\ninvitedWorld|0")
+    sleep(3000) 
+end
+
+for i = sayi,soyi do
+hesapk1()
+sleep(1000)
+sayi=sayi+1
+end
+
+
+
